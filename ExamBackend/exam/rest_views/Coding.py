@@ -10,6 +10,7 @@ from django.conf import settings
 import random
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
+from exam.models import Result
 
 @swagger_auto_schema(
     method='get',
@@ -44,6 +45,8 @@ from drf_yasg import openapi
 @api_view(['GET'])
 def question_get(request):
     coding_dir = settings.CODINGQ_DIR
+    user_id = request.query_params.get('user_id')
+    result_id = request.query_params.get('result_id')
 
     # Check if directory exists
     if not os.path.exists(coding_dir):
@@ -58,7 +61,7 @@ def question_get(request):
     # Select a random question file
     random_file = random.choice(question_files)
     question_path = os.path.join(coding_dir, random_file)
-
+    Result.objects.filter(id=result_id, userId=user_id).update(codingQuestion=random_file)
     # Read the JSON content
     try:
         with open(question_path, "r", encoding="utf-8") as file:
@@ -224,6 +227,8 @@ def execute_test_cases(request):
     """
     uploaded_file = request.FILES.get("file")
     question_id = request.query_params.get("question_id")
+    user_id = request.query_params.get('user_id')
+    result_id = request.query_params.get('result_id')
 
     if not uploaded_file or not question_id:
         return Response({"error": "Missing 'file' or 'question_id' field"}, status=status.HTTP_400_BAD_REQUEST)
@@ -236,6 +241,11 @@ def execute_test_cases(request):
         question_data = json.load(f)
 
     test_cases = question_data.get("test_cases", [])
+    total_cases = len(test_cases)  # 🔹 Get total test cases
+    passed_cases = 0  # 🔹 Counter for passed test cases
+
+    if total_cases == 0:
+        return Response({"error": "No test cases found"}, status=status.HTTP_400_BAD_REQUEST)
 
     with tempfile.TemporaryDirectory() as temp_dir:
         file_name = "Main.java"
@@ -275,10 +285,20 @@ def execute_test_cases(request):
                 if output != expected_output:
                     all_passed = False
                     failed_cases.append({"input": input_data, "expected": expected_output, "got": output})
-
+                
+                if output == expected_output:
+                    passed_cases += 1
+                else:
+                    failed_cases.append({"input": input_data, "expected": expected_output, "got": output})
+                    
+            
             if all_passed:
+                percentage = 100
+                Result.objects.filter(id=result_id, userId=user_id).update(codingMarks=percentage)
                 return Response({"message": "All test cases passed!"}, status=status.HTTP_200_OK)
             else:
+                percentage = 0
+                Result.objects.filter(id=result_id, userId=user_id).update(codingMarks=percentage)
                 return Response({"error": "Some test cases failed", "details": failed_cases}, status=status.HTTP_400_BAD_REQUEST)
 
         except subprocess.CalledProcessError as e:

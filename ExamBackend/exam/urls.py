@@ -5,7 +5,7 @@ from exam.rest_views.Quiz import QuizRest
 from exam.rest_views.Exam import ExamRest
 from exam.rest_views.Temp import TempRest
 from exam.rest_views.Auth import RegisterView,LoginView,VerifyView
-
+from exam.rest_views.Behaviour import BehaviourREST
 
 urlpatterns = [
     # Authentication
@@ -28,6 +28,7 @@ urlpatterns = [
     path('execute_test_cases/', execute_test_cases, name='execute_test_cases'),
     
     # Behaviour Routes
+    path('behaviour/', BehaviourREST.as_view(), name='execute_code'),
     
     
     # Temp
