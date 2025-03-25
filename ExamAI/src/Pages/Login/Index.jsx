@@ -16,7 +16,8 @@ const Index = () => {
   const requestPermissions = async () => {
     try {
       await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-      navigate("/dashboard");
+      navigate("/upload-face");
+      
     } catch (error) {
       alert("Camera & Microphone access is required to proceed.");
     }

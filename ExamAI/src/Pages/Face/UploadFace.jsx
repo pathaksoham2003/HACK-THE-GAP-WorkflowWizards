@@ -1,10 +1,12 @@
 import { useState, useRef } from "react";
 import API_ENDPOINTS from "../../api/endpoint";
+import { useNavigate } from "react-router-dom";
 
 const UploadFace = () => {
   const [cameraActive, setCameraActive] = useState(false);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
 
   // Start Camera
   const startCamera = async () => {
@@ -46,6 +48,7 @@ const UploadFace = () => {
           if (response.ok) {
             alert("Image uploaded successfully!");
             console.log("Response:", data);
+            navigate("/dashboard");
           } else {
             alert("Error: " + data.error);
           }

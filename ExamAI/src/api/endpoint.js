@@ -9,7 +9,9 @@ const API_ENDPOINTS = {
   EXECUTE_TEST_CASES: `${BASE_URL}/execute_test_cases/`,
   FACE_UPLOAD: `${BASE_URL}/generate-face-encoding/`,
  CHECK_FACE: `${BASE_URL}/check-face/`,
- SUBMIT_QUIZ: `${BASE_URL}/quiz/random/`
+ SUBMIT_QUIZ: `${BASE_URL}/quiz/random/`,
+ BEHAVIOUR: `${BASE_URL}/behaviour/`
+
 };
 
 export default API_ENDPOINTS;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Editor from "@monaco-editor/react";
 import API_ENDPOINTS from "../../api/endpoint";
+import ScreenExitLayout from "../../components/ScreenExitLayout";
 
 const initialJavaCode = `import java.util.Scanner;
 
@@ -27,11 +28,17 @@ const Code = () => {
   const [question, setQuestion] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [timeLeft, setTimeLeft] = useState(900); // 15 minutes in seconds
 
   useEffect(() => {
     const fetchLatestQuestion = async () => {
       try {
-        const response = await fetch(API_ENDPOINTS.GET_LATEST_CODING_QUESTION);
+        const userId = localStorage.getItem("userId");
+        const resultId = localStorage.getItem("resultId");
+        const response = await fetch(
+          API_ENDPOINTS.GET_LATEST_CODING_QUESTION +
+            `?user_id=${userId}&result_id=${resultId}`
+        );
         const data = await response.json();
         if (response.ok) {
           setQuestion(data);
@@ -48,6 +55,25 @@ const Code = () => {
     fetchLatestQuestion();
   }, []);
 
+  useEffect(() => {
+    if (timeLeft <= 0) {
+      handleRunCode();
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => prevTime - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+  };
+
   const handleRunCode = async () => {
     if (!question) {
       setOutput("No question loaded.");
@@ -57,16 +83,26 @@ const Code = () => {
     const formData = new FormData();
     const file = new Blob([code], { type: "text/plain" });
     formData.append("file", file, "Main.java");
-    // formData.append("question_id", question.id);
 
     try {
-      const response = await fetch(`${API_ENDPOINTS.EXECUTE_TEST_CASES}?language=java&question_id=${question.question_id}`, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `${API_ENDPOINTS.EXECUTE_TEST_CASES}?language=java&question_id=${question.question_id}`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       const data = await response.json();
+
       if (response.ok) {
-        setOutput(data.result || "Code executed successfully, but no output received.");
+        setOutput(
+          data.result || "Code executed successfully, but no output received."
+        );
+
+        // Show success message for 5 seconds before navigating
+        setTimeout(() => {
+          navigate("/personalres");
+        }, 5000);
       } else {
         setOutput(data.message || "Execution failed.");
       }
@@ -76,51 +112,72 @@ const Code = () => {
   };
 
   return (
-    <div className="w-screen h-screen flex">
-      {/* Sidebar */}
-      <div className="w-1/4 bg-blue-700 text-white p-6 flex flex-col">
-        <h2 className="text-lg font-semibold mb-6">Coding Environment</h2>
-        <button className="mb-4 bg-white text-blue-700 p-2 rounded" onClick={() => navigate("/dashboard")}>
-          Back
-        </button>
+    <ScreenExitLayout>
+      <div className="w-screen h-screen flex">
+        {/* Sidebar */}
+        <div className="w-1/4 bg-blue-700 text-white p-6 flex flex-col">
+          <h2 className="text-lg font-semibold mb-6">Coding Environment</h2>
+          <button
+            className="mb-4 bg-white text-blue-700 p-2 rounded"
+            onClick={() => navigate("/dashboard")}
+          >
+            Back
+          </button>
 
-        {loading ? (
-          <p>Loading question...</p>
-        ) : error ? (
-          <p className="text-red-500">{error}</p>
-        ) : (
-          <>
-            <h3 className="text-lg font-semibold">{question.question_description}</h3>
-            <h1>{question.question_id}</h1>
-            <p className="text-sm mt-2"><strong>Input:</strong> {question.input_description} </p>
-            <p className="text-sm mt-2"><strong>Output:</strong> {question.output_description}</p>
-            <p className="text-sm mt-2"><strong>Constraints:</strong> {question.constraints}</p>
-          </>
-        )}
-      </div>
+          <h3 className="text-lg font-semibold">
+            Time Left: {formatTime(timeLeft)}
+          </h3>
 
-      {/* Code Editor */}
-      <div className="flex-1 p-6 flex flex-col">
-        <h2 className="text-lg font-semibold mb-4 text-gray-700">Java Code Editor</h2>
+          {loading ? (
+            <p>Loading question...</p>
+          ) : error ? (
+            <p className="text-red-500">{error}</p>
+          ) : (
+            <>
+              <h3 className="text-lg font-semibold">
+                {question.question_description}
+              </h3>
+              <p className="text-sm mt-2">
+                <strong>Input:</strong> {question.input_description}{" "}
+              </p>
+              <p className="text-sm mt-2">
+                <strong>Output:</strong> {question.output_description}
+              </p>
+              <p className="text-sm mt-2">
+                <strong>Constraints:</strong> {question.constraints}
+              </p>
+            </>
+          )}
+        </div>
 
-        <Editor
-          height="60vh"
-          language="java"
-          value={code}
-          theme="vs-dark"
-          onChange={(value) => setCode(value)}
-        />
+        {/* Code Editor */}
+        <div className="flex-1 p-6 flex flex-col">
+          <h2 className="text-lg font-semibold mb-4 text-gray-700">
+            Java Code Editor
+          </h2>
 
-        <button className="mt-4 bg-green-600 text-white p-2 rounded" onClick={handleRunCode}>
-          Run Code
-        </button>
+          <Editor
+            height="60vh"
+            language="java"
+            value={code}
+            theme="vs-dark"
+            onChange={(value) => setCode(value)}
+          />
 
-        <div className="mt-4 bg-gray-100 p-4 rounded text-black">
-          <h4 className="font-semibold">Test Output:</h4>
-          <pre>{output}</pre>
+          <button
+            className="mt-4 bg-green-600 text-white p-2 rounded"
+            onClick={handleRunCode}
+          >
+            Run Code
+          </button>
+
+          <div className="mt-4 bg-gray-100 p-4 rounded text-black">
+            <h4 className="font-semibold">Test Output:</h4>
+            <pre>{output}</pre>
+          </div>
         </div>
       </div>
-    </div>
+    </ScreenExitLayout>
   );
 };
 
