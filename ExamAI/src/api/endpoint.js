@@ -7,7 +7,7 @@ const API_ENDPOINTS = {
   START_EXAM: `${BASE_URL}/exam/create`,
   GET_LATEST_CODING_QUESTION: `${BASE_URL}/coding/random/`, // New API to fetch the latest coding question
   EXECUTE_TEST_CASES: `${BASE_URL}/execute_test_cases/`,
-
+  FACE_UPLOAD: `${BASE_URL}/generate-face-encoding/`,
 };
 
 export default API_ENDPOINTS;

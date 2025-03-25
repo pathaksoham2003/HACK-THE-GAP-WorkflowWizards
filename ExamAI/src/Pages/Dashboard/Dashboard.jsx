@@ -20,6 +20,7 @@ const Dashboard = () => {
             <button onClick={() => navigate("/code")} className="hover:underline">Start Coding Question</button>
             <button onClick={() => navigate("/personalres")} className="hover:underline">Behavioural Interview</button>
             <button className="hover:underline">Result</button>
+            <button onClick={() => navigate("/upload-face")} className="hover:underline">Upload Face</button>
           </nav>
         </div>
         

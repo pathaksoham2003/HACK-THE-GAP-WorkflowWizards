@@ -11,6 +11,7 @@ import LanguageSelection from "./Pages/Exam/LanguageSelection";
 import Register from "./Pages/Login/Register";
 // import CreateExam from "./Pages/Exam/CreateExam";
 import StartExam from "./Pages/Exam/StartExam";
+import UploadFace from "./Pages/Face/UploadFace";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/personalres" element={<PersonalResponse />} />
           <Route path="/exam-camera" element={<ExamCameraCapture />} />
           <Route path="/upload-image" element={<ImageUploadPage />} />
+          <Route path="/upload-face" element={<UploadFace />} />
           <Route path="/select-lang" element={<LanguageSelection />} />
           <Route path="/register" element={<Register />} />
           
