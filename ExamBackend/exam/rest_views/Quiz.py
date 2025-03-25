@@ -91,14 +91,12 @@ class QuizRest(APIView):
         user_id = request.data.get("user_id")
         result_id = request.data.get("result_id")
         marks = request.data.get("marks")
-
+        print(marks)
         if user_id is None or result_id is None or marks is None:
             return Response({"error": "user_id, result_id, and marks are required"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            result = Result.objects.get(id=result_id, userId=user_id)
-            result.marks = marks
-            result.save()
+            Result.objects.filter(id=result_id, userId=user_id).update(quizMarks=marks * 10)
             return Response({"message": "Result updated successfully"}, status=status.HTTP_200_OK)
         except Result.DoesNotExist:
             return Response({"error": "Result not found"}, status=status.HTTP_404_NOT_FOUND)
