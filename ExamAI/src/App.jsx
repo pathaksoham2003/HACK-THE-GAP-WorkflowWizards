@@ -12,6 +12,7 @@ import Register from "./Pages/Login/Register";
 // import CreateExam from "./Pages/Exam/CreateExam";
 import StartExam from "./Pages/Exam/StartExam";
 import UploadFace from "./Pages/Face/UploadFace";
+import CheckFace from "./Pages/Face/CheckFace";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           
           <Route path="/start-exam" element={<StartExam/>} />
+          <Route path="/check-face" element={<CheckFace/>} />
 
 
         {/* </Route> */}

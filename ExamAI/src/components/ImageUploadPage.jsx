@@ -6,6 +6,7 @@ const ImageUploadPage = () => {
   const [cameraActive, setCameraActive] = useState(false);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const userId = "123"; // Replace with dynamic user ID if needed
 
   // Handle file selection
   const handleImageChange = (event) => {
@@ -37,11 +38,14 @@ const ImageUploadPage = () => {
       canvasRef.current.width = videoRef.current.videoWidth;
       canvasRef.current.height = videoRef.current.videoHeight;
       context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
-      const imageUrl = canvasRef.current.toDataURL("image/png");
-
-      setPreviewUrl(imageUrl);
-      setSelectedImage(imageUrl);
-      stopCamera();
+      
+      // Convert canvas to Blob (File object)
+      canvasRef.current.toBlob((blob) => {
+        const file = new File([blob], "captured_image.png", { type: "image/png" });
+        setSelectedImage(file);
+        setPreviewUrl(URL.createObjectURL(file));
+        stopCamera();
+      }, "image/png");
     }
   };
 
@@ -49,22 +53,39 @@ const ImageUploadPage = () => {
   const stopCamera = () => {
     if (videoRef.current && videoRef.current.srcObject) {
       const stream = videoRef.current.srcObject;
-      const tracks = stream.getTracks();
-      tracks.forEach(track => track.stop());
+      stream.getTracks().forEach(track => track.stop());
     }
     setCameraActive(false);
   };
 
-  // Handle image upload (Mock function)
-  const handleUpload = () => {
+  // Handle image upload
+  const handleUpload = async () => {
     if (!selectedImage) {
       alert("Please select or capture an image first.");
       return;
     }
 
-    // Simulate an upload process
-    console.log("Uploading image:", selectedImage);
-    alert("Image uploaded successfully!");
+    const formData = new FormData();
+    formData.append("user_id", userId);
+    formData.append("image", selectedImage);
+
+    try {
+      const response = await fetch("YOUR_UPLOAD_API_ENDPOINT", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Image uploaded successfully!");
+      } else {
+        alert(`Upload failed: ${data.error || "Unknown error"}`);
+      }
+    } catch (error) {
+      alert("Error uploading image.");
+      console.error(error);
+    }
   };
 
   return (

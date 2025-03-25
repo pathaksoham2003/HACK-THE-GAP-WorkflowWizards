@@ -21,6 +21,7 @@ const Dashboard = () => {
             <button onClick={() => navigate("/personalres")} className="hover:underline">Behavioural Interview</button>
             <button className="hover:underline">Result</button>
             <button onClick={() => navigate("/upload-face")} className="hover:underline">Upload Face</button>
+            <button onClick={() => navigate("/check-face")} className="hover:underline">check Face</button>
           </nav>
         </div>
         
