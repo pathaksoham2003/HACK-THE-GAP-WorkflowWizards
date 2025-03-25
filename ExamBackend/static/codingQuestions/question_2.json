@@ -1,0 +1,48 @@
+{
+    "question_id": 2,
+    "question_description": "Given an array of integers, find and return the maximum integer in the array.",
+    "input_description": "An array of integers",
+    "output_description": "Maximum integer in the array",
+    "constraints": "The array contains at least one integer and at most 100,000 integers.",
+    "example": {
+        "input": [
+            3,
+            7,
+            2,
+            9,
+            5
+        ],
+        "output": 9
+    },
+    "test_cases": [
+        {
+            "input": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "output": 5
+        },
+        {
+            "input": [
+                -10,
+                -5,
+                0,
+                5,
+                10
+            ],
+            "output": 10
+        },
+        {
+            "input": [
+                100,
+                200,
+                50,
+                300
+            ],
+            "output": 300
+        }
+    ]
+}

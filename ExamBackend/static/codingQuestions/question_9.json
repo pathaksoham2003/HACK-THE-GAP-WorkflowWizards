@@ -1,0 +1,46 @@
+{
+    "question_id": 9,
+    "question_description": "Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the missing number.",
+    "input_description": "An array containing n distinct numbers taken from 0, 1, 2, ..., n",
+    "output_description": "The missing number",
+    "constraints": "The array has a length of n and contains numbers from 0 to n with exactly one missing.",
+    "example": {
+        "input": [
+            0,
+            1,
+            3
+        ],
+        "output": 2
+    },
+    "test_cases": [
+        {
+            "input": [
+                3,
+                0,
+                1
+            ],
+            "output": 2
+        },
+        {
+            "input": [
+                0,
+                1
+            ],
+            "output": 2
+        },
+        {
+            "input": [
+                9,
+                6,
+                4,
+                2,
+                3,
+                5,
+                7,
+                0,
+                1
+            ],
+            "output": 8
+        }
+    ]
+}

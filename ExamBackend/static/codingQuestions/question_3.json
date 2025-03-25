@@ -1,0 +1,25 @@
+{
+    "question_id": 3,
+    "question_description": "Given an integer n, determine whether it is a prime number.",
+    "input_description": "An integer n",
+    "output_description": "Boolean indicating if the number is prime",
+    "constraints": "1 \u2264 n \u2264 10^6.",
+    "example": {
+        "input": 13,
+        "output": true
+    },
+    "test_cases": [
+        {
+            "input": 7,
+            "output": true
+        },
+        {
+            "input": 10,
+            "output": false
+        },
+        {
+            "input": 2,
+            "output": true
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "question_id": 4,
+    "question_description": "Given an array of integers, find and return the sum of all elements in the array.",
+    "input_description": "An array of integers",
+    "output_description": "Sum of all elements",
+    "constraints": "The array contains at least one integer and at most 100,000 integers.",
+    "example": {
+        "input": [
+            1,
+            2,
+            3
+        ],
+        "output": 6
+    },
+    "test_cases": [
+        {
+            "input": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "output": 15
+        },
+        {
+            "input": [
+                -1,
+                -2,
+                -3
+            ],
+            "output": -6
+        },
+        {
+            "input": [
+                0,
+                0,
+                0
+            ],
+            "output": 0
+        }
+    ]
+}

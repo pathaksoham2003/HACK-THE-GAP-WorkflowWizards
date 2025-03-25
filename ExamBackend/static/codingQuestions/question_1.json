@@ -1,0 +1,25 @@
+{
+    "question_id": 1,
+    "question_description": "Given a string s, write a function to reverse the string and return the result.",
+    "input_description": "A string s",
+    "output_description": "Reversed string",
+    "constraints": "The input string consists of printable ASCII characters and has a length between 1 and 100,000.",
+    "example": {
+        "input": "example",
+        "output": "elpmaxe"
+    },
+    "test_cases": [
+        {
+            "input": "hello",
+            "output": "olleh"
+        },
+        {
+            "input": "world",
+            "output": "dlrow"
+        },
+        {
+            "input": "Python",
+            "output": "nohtyP"
+        }
+    ]
+}

@@ -1,0 +1,346 @@
+[
+    {
+        "question": "Which function is used to add an element to a list in Python?",
+        "options": ["append()", "add()", "insert()", "extend()"],
+        "correctAnswer": "append()",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the output of `print(type([1, 2, 3]))` in Python?",
+        "options": ["tuple", "list", "set", "array"],
+        "correctAnswer": "list",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "Which method is used to remove an element from a set in Python?",
+        "options": ["remove()", "pop()", "discard()", "delete()"],
+        "correctAnswer": "remove()",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the purpose of `__init__` method in Python class?",
+        "options": ["To define a class", "To initialize the object's attributes", "To create a function", "To import a module"],
+        "correctAnswer": "To initialize the object's attributes",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the output of `print(10 // 3)` in Python?",
+        "options": ["3.33", "3", "3.0", "4"],
+        "correctAnswer": "3",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "Which function is used to open a file in Python?",
+        "options": ["file()", "open()", "read()", "write()"],
+        "correctAnswer": "open()",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "What does the `super()` function do in Python?",
+        "options": ["Calls a superclass method", "Creates a new superclass", "Deletes a superclass", "Checks if a class is a superclass"],
+        "correctAnswer": "Calls a superclass method",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the purpose of the `try...except` block in Python?",
+        "options": ["To define a function", "To handle exceptions", "To create a loop", "To import a module"],
+        "correctAnswer": "To handle exceptions",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the output of `print(2 ** 3)` in Python?",
+        "options": ["6", "8", "9", "16"],
+        "correctAnswer": "8",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "Which module is used for regular expressions in Python?",
+        "options": ["re", "regex", "regexp", "string"],
+        "correctAnswer": "re",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the purpose of the `map()` function in Python?",
+        "options": ["To filter elements", "To apply a function to each item of an iterable", "To reduce an iterable to a single value", "To sort an iterable"],
+        "correctAnswer": "To apply a function to each item of an iterable",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is a decorator in Python?",
+        "options": ["A design pattern", "A function that modifies another function", "A class that defines styles", "A way to import modules"],
+        "correctAnswer": "A function that modifies another function",
+        "difficulty": "hard",
+        "topic": "Python"
+    },
+    {
+        "question": "Which method is used to add a key-value pair to a dictionary in Python?",
+        "options": ["add()", "append()", "insert()", "update()"],
+        "correctAnswer": "update()",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the output of `print(list(range(5)))` in Python?",
+        "options": ["[0, 1, 2, 3, 4]", "[1, 2, 3, 4, 5]", "[0, 1, 2, 3, 4, 5]", "[5]"],
+        "correctAnswer": "[0, 1, 2, 3, 4]",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the purpose of the `finally` block in a `try...except...finally` statement?",
+        "options": ["To handle exceptions", "To define a function", "To execute code that always runs", "To create a loop"],
+        "correctAnswer": "To execute code that always runs",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "Which function is used to get the length of a string in Python?",
+        "options": ["size()", "length()", "len()", "count()"],
+        "correctAnswer": "len()",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the output of `print(\"hello\".replace(\"l\", \"*\"))` in Python?",
+        "options": ["he**o", "he*lo", "h*llo", "None"],
+        "correctAnswer": "he**o",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the Global Interpreter Lock (GIL) in Python?",
+        "options": ["A type of error", "A lock that allows only one thread to execute Python bytecode at a time", "A memory management technique", "A way to define global variables"],
+        "correctAnswer": "A lock that allows only one thread to execute Python bytecode at a time",
+        "difficulty": "hard",
+        "topic": "Python"
+    },
+    {
+        "question": "Which method is used to sort a list in Python?",
+        "options": ["sorted()", "sort()", "order()", "arrange()"],
+        "correctAnswer": "sort()",
+        "difficulty": "easy",
+        "topic": "Python"
+    },
+    {
+        "question": "What is the purpose of the `filter()` function in Python?",
+        "options": ["To transform elements", "To select elements based on a condition", "To combine elements", "To sort elements"],
+        "correctAnswer": "To select elements based on a condition",
+        "difficulty": "medium",
+        "topic": "Python"
+    },
+    {
+        "question": "What is Django?",
+        "options": ["A type of database", "A front-end framework", "A Python web framework", "An operating system"],
+        "correctAnswer": "A Python web framework",
+        "difficulty": "easy",
+        "topic": "Django"
+    },
+    {
+        "question": "Which command is used to create a new Django project?",
+        "options": ["django-admin startproject", "create-django-project", "django startproject", "new-django-project"],
+        "correctAnswer": "django-admin startproject",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is a Django model?",
+        "options": ["A template", "A view", "A database representation", "A URL pattern"],
+        "correctAnswer": "A database representation",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "Which file is used to define URL patterns in Django?",
+        "options": ["models.py", "views.py", "urls.py", "forms.py"],
+        "correctAnswer": "urls.py",
+        "difficulty": "easy",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of a Django view?",
+        "options": ["To define the database schema", "To handle HTTP requests and return responses", "To create HTML templates", "To define URL patterns"],
+        "correctAnswer": "To handle HTTP requests and return responses",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "Which template language does Django use by default?",
+        "options": ["Jinja2", "Mako", "Django Templates", "HTML"],
+        "correctAnswer": "Django Templates",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is a Django form?",
+        "options": ["A way to define HTML forms in Python", "A database table", "A URL pattern", "A type of view"],
+        "correctAnswer": "A way to define HTML forms in Python",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "Which command is used to apply migrations in Django?",
+        "options": ["python manage.py migrate", "python manage.py makemigrations", "python manage.py sync", "python manage.py applymigrations"],
+        "correctAnswer": "python manage.py migrate",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of Django middleware?",
+        "options": ["To define database models", "To process requests and responses", "To create templates", "To define URL patterns"],
+        "correctAnswer": "To process requests and responses",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is a Django signal?",
+        "options": ["A way to send messages between users", "A way to define asynchronous tasks", "A way to allow certain users access", "A way to allow certain actions to occur when events happen in the framework"],
+        "correctAnswer": "A way to allow certain actions to occur when events happen in the framework",
+        "difficulty": "hard",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of the `CharField` in Django models?",
+        "options": ["To store integer values", "To store boolean values", "To store text values", "To store date values"],
+        "correctAnswer": "To store text values",
+        "difficulty": "easy",
+        "topic": "Django"
+    },
+    {
+        "question": "Which method is used to retrieve data from a Django model?",
+        "options": ["get()", "fetch()", "find()", "select()"],
+        "correctAnswer": "get()",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of the `{% extends %}` tag in Django templates?",
+        "options": ["To include another template", "To define a new block", "To loop through data", "To define a variable"],
+        "correctAnswer": "To include another template",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is Django REST Framework?",
+        "options": ["A front-end framework", "A library for building web APIs", "A database management tool", "A testing framework"],
+        "correctAnswer": "A library for building web APIs",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is a serializer in Django REST Framework?",
+        "options": ["A way to define URLs", "A way to define views", "A way to convert data to and from JSON", "A way to define models"],
+        "correctAnswer": "A way to convert data to and from JSON",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of the `makemigrations` command in Django?",
+        "options": ["To apply changes to the database", "To create new models", "To create migration files based on changes to your models", "To run the Django server"],
+        "correctAnswer": "To create migration files based on changes to your models",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "Which HTTP method is typically used to retrieve data?",
+        "options": ["POST", "GET", "PUT", "DELETE"],
+        "correctAnswer": "GET",
+        "difficulty": "easy",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of the `STATIC_URL` setting in Django?",
+        "options": ["To define the URL for media files", "To define the URL for static files like CSS and JavaScript", "To define the URL for templates", "To define the URL for the database"],
+        "correctAnswer": "To define the URL for static files like CSS and JavaScript",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+     {
+        "question": "What is the purpose of the `SlugField` in Django?",
+        "options": ["Store large text", "Store URL-friendly strings", "Store email addresses", "Store IP addresses"],
+        "correctAnswer": "Store URL-friendly strings",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "How do you handle file uploads in Django?",
+        "options": ["Using a special view", "Using a form with a FileField", "Automatically, Django handles them", "Through JavaScript"],
+        "correctAnswer": "Using a form with a FileField",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of the `{% csrf_token %}` template tag in Django?",
+        "options": ["Include CSS", "Prevent Cross-Site Request Forgery attacks", "Display current time", "Create forms"],
+        "correctAnswer": "Prevent Cross-Site Request Forgery attacks",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is a `QuerySet` in Django?",
+        "options": ["A database table", "A list of Python objects", "A collection of database queries", "A template"],
+        "correctAnswer": "A collection of database queries",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the use of `select_related()` in Django?",
+        "options": ["Optimize database queries by joining related tables", "Select random objects", "Select only specific columns", "Filter related objects"],
+        "correctAnswer": "Optimize database queries by joining related tables",
+        "difficulty": "hard",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of `AbstractUser` in Django?",
+        "options": ["Create abstract models", "Customize the user model", "Define user permissions", "Handle user authentication"],
+        "correctAnswer": "Customize the user model",
+        "difficulty": "hard",
+        "topic": "Django"
+    },
+    {
+        "question": "Which decorator is used for class-based views in Django?",
+        "options": ["@classview", "@view_class", "@method_decorator", "@class_decorator"],
+        "correctAnswer": "@method_decorator",
+        "difficulty": "hard",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of `as_view()` in Django class-based views?",
+        "options": ["Render a template", "Convert the class into a callable view function", "Define class attributes", "Handle form submission"],
+        "correctAnswer": "Convert the class into a callable view function",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "How do you implement caching in Django?",
+        "options": ["Only in templates", "Using middleware", "Using the cache framework", "Automatically"],
+        "correctAnswer": "Using the cache framework",
+        "difficulty": "medium",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the purpose of the `prefetch_related()` method in Django?",
+        "options": ["Optimize database queries for many-to-many and foreign key relationships", "Filter related models", "Sort related models", "Delete related models"],
+        "correctAnswer": "Optimize database queries for many-to-many and foreign key relationships",
+        "difficulty": "hard",
+        "topic": "Django"
+    },
+    {
+        "question": "What is the primary purpose of Django's `signals`?",
+        "options": ["Handle user authentication", "Manage background tasks", "Allow decoupled applications to get notified when actions occur", "Define URL patterns"],
+        "correctAnswer": "Allow decoupled applications to get notified when actions occur",
+        "difficulty": "hard",
+        "topic": "Django"
+    }
+]
+

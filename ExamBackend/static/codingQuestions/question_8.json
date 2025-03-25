@@ -1,0 +1,25 @@
+{
+    "question_id": 8,
+    "question_description": "Given an integer n, find and return its factorial.",
+    "input_description": "An integer n",
+    "output_description": "Factorial of n",
+    "constraints": "0 \u2264 n \u2264 12 (to prevent integer overflow).",
+    "example": {
+        "input": 4,
+        "output": 24
+    },
+    "test_cases": [
+        {
+            "input": 5,
+            "output": 120
+        },
+        {
+            "input": 0,
+            "output": 1
+        },
+        {
+            "input": 3,
+            "output": 6
+        }
+    ]
+}

@@ -1,0 +1,340 @@
+[
+    {
+      "question": "Which keyword is used to define a class in Java?",
+      "options": ["class", "struct", "object", "def"],
+      "correctAnswer": "class",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the output of `System.out.println(10 / 3);` in Java?",
+      "options": ["3.33", "3", "3.0", "4"],
+      "correctAnswer": "3",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "Which data type is used to store a single character in Java?",
+      "options": ["string", "char", "int", "byte"],
+      "correctAnswer": "char",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "Which keyword is used to create an object in Java?",
+      "options": ["new", "create", "object", "instance"],
+      "correctAnswer": "new",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the purpose of the `main` method in Java?",
+      "options": ["To define a class", "To initialize variables", "To start the execution of the program", "To print output"],
+      "correctAnswer": "To start the execution of the program",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "Which access modifier is used to make a member accessible only within its class?",
+      "options": ["public", "private", "protected", "default"],
+      "correctAnswer": "private",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the output of `System.out.println(10 % 3);` in Java?",
+      "options": ["3", "1", "0", "3.33"],
+      "correctAnswer": "1",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "Which keyword is used to inherit a class in Java?",
+      "options": ["extends", "implements", "inherits", "subclass"],
+      "correctAnswer": "extends",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the purpose of the `super` keyword in Java?",
+      "options": ["To define a subclass", "To call a method of the superclass", "To create a new object", "To access a static variable"],
+      "correctAnswer": "To call a method of the superclass",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which interface is used to implement the `compareTo()` method for sorting objects in Java?",
+      "options": ["Comparable", "Comparator", "Iterable", "Serializable"],
+      "correctAnswer": "Comparable",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the difference between `==` and `.equals()` in Java?",
+      "options": ["No difference", "`==` compares object references, `.equals()` compares object content", "`==` compares object content, `.equals()` compares object references", "`==` is for primitive types, `.equals()` is for objects"],
+      "correctAnswer": "`==` compares object references, `.equals()` compares object content",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which exception is thrown when you try to access an element at an invalid index in an array?",
+      "options": ["ArrayIndexOutOfBoundsException", "IndexOutOfBoundsException", "NullPointerException", "IllegalArgumentException"],
+      "correctAnswer": "ArrayIndexOutOfBoundsException",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the purpose of the `finally` block in a `try-catch-finally` statement?",
+      "options": ["To handle exceptions", "To define a function", "To execute code that always runs, regardless of whether an exception is thrown", "To create a loop"],
+      "correctAnswer": "To execute code that always runs, regardless of whether an exception is thrown",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which data structure uses the Last-In-First-Out (LIFO) principle?",
+      "options": ["Queue", "Stack", "List", "Tree"],
+      "correctAnswer": "Stack",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is method overloading in Java?",
+      "options": ["Defining multiple methods with the same name but different parameters", "Overriding a method in a subclass", "Defining a method with the same name and same parameters", "Calling a method of the superclass"],
+      "correctAnswer": "Defining multiple methods with the same name but different parameters",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which access modifier allows a member to be accessed from any class?",
+      "options": ["private", "protected", "public", "default"],
+      "correctAnswer": "public",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the purpose of the `static` keyword in Java?",
+      "options": ["To create an object", "To define a constant", "To make a member belong to the class rather than an instance", "To inherit a class"],
+      "correctAnswer": "To make a member belong to the class rather than an instance",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which interface is used to define a collection of unique elements in Java?",
+      "options": ["List", "Set", "Map", "Queue"],
+      "correctAnswer": "Set",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the output of `String s = \"Java\"; System.out.println(s.substring(1, 3));` in Java?",
+      "options": ["Ja", "av", "va", "Java"],
+      "correctAnswer": "av",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which class is the root of the class hierarchy in Java?",
+      "options": ["Object", "Class", "String", "System"],
+      "correctAnswer": "Object",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is Java?",
+      "options": ["A type of coffee", "An operating system", "A programming language", "A database"],
+      "correctAnswer": "A programming language",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "Which of the following is not a primitive data type in Java?",
+      "options": ["int", "boolean", "String", "double"],
+      "correctAnswer": "String",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+          "question": "What is the process of converting an object to a byte stream called?",
+          "options": ["Serialization", "Deserialization", "Compilation", "Abstraction"],
+          "correctAnswer": "Serialization",
+          "difficulty": "medium",
+          "topic": "Java"
+    },
+    {
+          "question": "Which annotation is used to mark a method as overridden in Java?",
+          "options": ["@Override", "@Overload", "@OverrideMethod", "@Super"],
+          "correctAnswer": "@Override",
+          "difficulty": "medium",
+          "topic": "Java"
+    },
+    {
+          "question": "What is the purpose of the `volatile` keyword in Java?",
+          "options": ["Declare a constant variable", "Ensure a variable's value is always read from and written to main memory", "Define a method that cannot be overridden", "Create a new thread"],
+          "correctAnswer": "Ensure a variable's value is always read from and written to main memory",
+          "difficulty": "hard",
+          "topic": "Java"
+    },
+    {
+      "question": "Which interface is used for handling events in Java AWT?",
+      "options": ["EventListener", "EventHandler", "ActionListener", "EventInterface"],
+      "correctAnswer": "ActionListener",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the purpose of garbage collection in Java?",
+      "options": ["To delete unused files", "To free up memory by destroying unused objects", "To optimize code execution", "To handle exceptions"],
+      "correctAnswer": "To free up memory by destroying unused objects",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which class is used to create a thread in Java?",
+      "options": ["Thread", "Runnable", "Task", "Process"],
+      "correctAnswer": "Thread",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the difference between checked and unchecked exceptions in Java?",
+      "options": ["Checked exceptions are handled at runtime, unchecked at compile time", "Unchecked exceptions are handled at runtime, checked at compile time", "Checked exceptions must be handled or declared, unchecked exceptions do not", "Unchecked exceptions must be handled or declared, checked exceptions do not"],
+      "correctAnswer": "Checked exceptions must be handled or declared, unchecked exceptions do not",
+      "difficulty": "hard",
+      "topic": "Java"
+    },
+    {
+      "question": "Which design pattern is used to define a blueprint for creating objects?",
+      "options": ["Singleton", "Factory", "Observer", "Decorator"],
+      "correctAnswer": "Factory",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the purpose of the `transient` keyword in Java?",
+      "options": ["To make a variable constant", "To prevent a variable from being serialized", "To define a static variable", "To make a method abstract"],
+      "correctAnswer": "To prevent a variable from being serialized",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which annotation is used to suppress compiler warnings in Java?",
+      "options": ["@SuppressWarnings", "@SuppressWarning", "@IgnoreWarning", "@NoWarning"],
+      "correctAnswer": "@SuppressWarnings",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+          "question": "What is the default value of a boolean variable in Java?",
+          "options": ["true", "false", "null", "0"],
+          "correctAnswer": "false",
+          "difficulty": "easy",
+          "topic": "Java"
+    },
+    {
+          "question": "Which operator is used for string concatenation in Java?",
+          "options": ["+", ".", "&", ":"],
+          "correctAnswer": "+",
+          "difficulty": "easy",
+          "topic": "Java"
+    },
+    {
+          "question": "What is the purpose of the `instanceof` operator in Java?",
+          "options": ["Check if a variable is initialized", "Check if an object is an instance of a class or interface", "Create a new instance of a class", "Delete an instance of a class"],
+          "correctAnswer": "Check if an object is an instance of a class or interface",
+          "difficulty": "medium",
+          "topic": "Java"
+    },
+    {
+      "question": "Which loop is guaranteed to execute at least once in Java?",
+      "options": ["for", "while", "do-while", "if"],
+      "correctAnswer": "do-while",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the name of the Java compiler?",
+      "options": ["javac", "java", "javap", "javadoc"],
+      "correctAnswer": "javac",
+      "difficulty": "easy",
+      "topic": "Java"
+    },
+    {
+      "question": "Which class is used for handling file input and output in Java?",
+      "options": ["FileIO", "FileManager", "File", "IOFile"],
+      "correctAnswer": "File",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the purpose of the `assert` keyword in Java?",
+      "options": ["To declare a variable", "To handle exceptions", "To test assumptions about the program's state", "To create a loop"],
+      "correctAnswer": "To test assumptions about the program's state",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "Which interface is a marker interface (an interface with no methods)?",
+      "options": ["Runnable", "Serializable", "EventListener", "Comparable"],
+      "correctAnswer": "Serializable",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+          "question": "What is the difference between `ArrayList` and `LinkedList` in Java?",
+          "options": ["No difference", "ArrayList is faster for insertion/deletion, LinkedList is faster for accessing elements", "ArrayList is faster for accessing elements, LinkedList is faster for insertion/deletion", "ArrayList can only store primitive types, LinkedList can only store objects"],
+          "correctAnswer": "ArrayList is faster for accessing elements, LinkedList is faster for insertion/deletion",
+          "difficulty": "medium",
+          "topic": "Java"
+    },
+    {
+          "question": "What is the purpose of the `ExecutorService` in Java concurrency?",
+          "options": ["To create new threads", "To manage a pool of threads", "To define thread priorities", "To synchronize threads"],
+          "correctAnswer": "To manage a pool of threads",
+          "difficulty": "medium",
+          "topic": "Java"
+    },
+    {
+          "question": "Which class is used to perform asynchronous operations in Java?",
+          "options": ["Thread", "AsyncTask", "Future", "CompletableFuture"],
+          "correctAnswer": "CompletableFuture",
+          "difficulty": "hard",
+          "topic": "Java"
+    },
+    {
+          "question": "What is the purpose of the `yield()` method in Java?",
+          "options": ["To stop a thread", "To give a hint to the scheduler that the current thread is willing to give up its current use of a processor", "To start a thread", "To check if a thread is alive"],
+          "correctAnswer": "To give a hint to the scheduler that the current thread is willing to give up its current use of a processor",
+          "difficulty": "medium",
+          "topic": "Java"
+    },
+    {
+      "question": "What is reflection in Java?",
+      "options": ["The ability of a class to create new objects", "The ability of a program to examine and modify its own structure and behavior at runtime", "A design pattern", "A memory management technique"],
+      "correctAnswer": "The ability of a program to examine and modify its own structure and behavior at runtime",
+      "difficulty": "hard",
+      "topic": "Java"
+    },
+    {
+      "question": "Which interface is used to mark a class as a functional interface in Java 8?",
+      "options": ["Functional", "FunctionalInterface", "Runnable", "Callable"],
+      "correctAnswer": "FunctionalInterface",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What are lambda expressions in Java?",
+      "options": ["Anonymous functions", "Class definitions", "Method overloading", "Variable declarations"],
+      "correctAnswer": "Anonymous functions",
+      "difficulty": "medium",
+      "topic": "Java"
+    },
+    {
+      "question": "What is the Stream API in Java 8?",
+      "options": ["A new I/O API", "An API for handling network connections", "An API for processing sequences of elements", "A new security API"],
+      "correctAnswer": "An API for processing sequences of elements",
+      "difficulty": "medium",
+      "topic": "Java"
+    }
+  ]
+  
+  

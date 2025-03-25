@@ -1,0 +1,340 @@
+[
+    {
+      "question": "What is the purpose of the `<html>` tag?",
+      "options": ["To define a hyperlink", "To specify the document type", "To define the root element of an HTML document", "To specify the character encoding"],
+      "correctAnswer": "To define the root element of an HTML document",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS property is used to change the text color of an element?",
+      "options": ["background-color", "text-color", "color", "font-color"],
+      "correctAnswer": "color",
+      "difficulty": "easy",
+      "topic": "CSS"
+    },
+    {
+      "question": "What does DOM stand for in JavaScript?",
+      "options": ["Document Object Model", "Data Object Model", "Dynamic Object Model", "Design Object Model"],
+      "correctAnswer": "Document Object Model",
+      "difficulty": "easy",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to create a hyperlink?",
+      "options": ["<link>", "<a>", "<href>", "<url>"],
+      "correctAnswer": "<a>",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "What does the CSS property `margin: 10px 20px 30px 40px;` represent?",
+      "options": ["Top, right, bottom, left", "Left, right, top, bottom", "Top, bottom, left, right", "Right, left, top, bottom"],
+      "correctAnswer": "Top, right, bottom, left",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the result of `typeof null` in JavaScript?",
+      "options": ["null", "object", "undefined", "string"],
+      "correctAnswer": "object",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to embed an image?",
+      "options": ["<picture>", "<image>", "<img>", "<src>"],
+      "correctAnswer": "<img>",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "What is the purpose of the CSS `z-index` property?",
+      "options": ["To set the font size", "To set the background color", "To specify the stack order of an element", "To set the text alignment"],
+      "correctAnswer": "To specify the stack order of an element",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the difference between `==` and `===` in JavaScript?",
+      "options": ["No difference", "== checks value, === checks value and type", "=== checks value, == checks value and type", "== checks type, === checks value"],
+      "correctAnswer": "== checks value, === checks value and type",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to define an unordered list?",
+      "options": ["<ol>", "<li>", "<ul>", "<list>"],
+      "correctAnswer": "<ul>",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "What does the CSS property `float` do?",
+      "options": ["Aligns text", "Positions an element to the left or right of its container", "Sets the background image", "Changes the font style"],
+      "correctAnswer": "Positions an element to the left or right of its container",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is a closure in JavaScript?",
+      "options": ["A function inside an object", "A function that has access to the parent scope, even after the parent function has closed", "A loop", "A data type"],
+      "correctAnswer": "A function that has access to the parent scope, even after the parent function has closed",
+      "difficulty": "hard",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to define a table row?",
+      "options": ["<table>", "<td>", "<th>", "<tr>"],
+      "correctAnswer": "<tr>",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "What is the purpose of the CSS `position: relative;`?",
+      "options": ["To position an element relative to the viewport", "To position an element relative to its normal position", "To position an element relative to its parent element", "To fix the element's position"],
+      "correctAnswer": "To position an element relative to its normal position",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the difference between `let` and `const` in JavaScript?",
+      "options": ["No difference", "let is block-scoped, const is function-scoped", "let can be reassigned, const cannot", "const can be reassigned, let cannot"],
+      "correctAnswer": "let can be reassigned, const cannot",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML attribute is used to define inline styles?",
+      "options": ["class", "id", "style", "src"],
+      "correctAnswer": "style",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "What is the CSS box model?",
+      "options": ["A model for creating 3D boxes", "A model that describes how elements are sized and spaced", "A model for text alignment", "A model for image positioning"],
+      "correctAnswer": "A model that describes how elements are sized and spaced",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is event bubbling in JavaScript?",
+      "options": ["An error handling mechanism", "The process of an event triggering on the deepest element and then propagating outwards", "A way to prevent events from firing", "A method for creating custom events"],
+      "correctAnswer": "The process of an event triggering on the deepest element and then propagating outwards",
+      "difficulty": "hard",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to define a form?",
+      "options": ["<input>", "<form>", "<fieldset>", "<label>"],
+      "correctAnswer": "<form>",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "What does the CSS property `display: flex;` do?",
+      "options": ["Hides an element", "Displays elements in a grid layout", "Creates a flexible box layout", "Changes the background color"],
+      "correctAnswer": "Creates a flexible box layout",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the purpose of `JSON.parse()` in JavaScript?",
+      "options": ["To convert a JavaScript object to a JSON string", "To convert a JSON string to a JavaScript object", "To format a JSON string", "To validate a JSON string"],
+      "correctAnswer": "To convert a JSON string to a JavaScript object",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+      {
+      "question": "What is the purpose of the `<head>` tag in HTML?",
+      "options": ["To display the main content of the webpage", "To define the structure of the webpage", "To link external style sheets and scripts, and define metadata", "To create hyperlinks"],
+      "correctAnswer": "To link external style sheets and scripts, and define metadata",
+      "difficulty": "medium",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS pseudo-class is used to style the active state of a link?",
+      "options": [":hover", ":active", ":visited", ":focus"],
+      "correctAnswer": ":active",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the output of `[1, 2, 3] + [4, 5, 6]` in JavaScript?",
+      "options": ["[1, 2, 3, 4, 5, 6]", "[5, 7, 9]", "12", "“1,2,34,5,6”"],
+      "correctAnswer": "“1,2,34,5,6”",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to create a button?",
+      "options": ["<button>", "<input type=\"button\">", "<btn>", "All of the above"],
+      "correctAnswer": "All of the above",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS property is used to add rounded corners to an element?",
+      "options": ["border-radius", "corner-radius", "border-style", "border-corner"],
+      "correctAnswer": "border-radius",
+      "difficulty": "easy",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the purpose of the `map()` function in JavaScript?",
+      "options": ["To filter elements in an array", "To iterate over elements in an array", "To transform elements in an array", "To sort elements in an array"],
+      "correctAnswer": "To transform elements in an array",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "What is the purpose of the `alt` attribute in the `<img>` tag?",
+      "options": ["To define the alignment of the image", "To provide an alternative text for the image", "To set the image as a background", "To define the image size"],
+      "correctAnswer": "To provide an alternative text for the image",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS property is used to control the spacing between lines of text?",
+      "options": ["text-spacing", "line-height", "letter-spacing", "word-spacing"],
+      "correctAnswer": "line-height",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What does the `this` keyword refer to in a JavaScript function?",
+      "options": ["The function itself", "The global object", "The object that called the function", "The previous function in the call stack"],
+      "correctAnswer": "The object that called the function",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to define a table header?",
+      "options": ["<td>", "<th>", "<tr>", "<thead>"],
+      "correctAnswer": "<th>",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "What is the purpose of the CSS `position: fixed;`?",
+      "options": ["To position an element relative to its normal position", "To position an element relative to its parent element", "To position an element relative to the viewport and make it stay in place", "To position an element at the bottom of the page"],
+      "correctAnswer": "To position an element relative to the viewport and make it stay in place",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the purpose of the `addEventListener()` method in JavaScript?",
+      "options": ["To add a new element to the DOM", "To attach an event handler to an element", "To define a new function", "To change the style of an element"],
+      "correctAnswer": "To attach an event handler to an element",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+      {
+      "question": "Which HTML tag is used for large headings?",
+      "options": ["<h1>", "<h6>", "<p>", "<heading>"],
+      "correctAnswer": "<h1>",
+      "difficulty": "easy",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS property is used for adding shadow to an element?",
+      "options": ["text-shadow", "box-shadow", "shadow-effect", "element-shadow"],
+      "correctAnswer": "box-shadow",
+      "difficulty": "medium",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the output of `parseInt(\"10\", 2)` in JavaScript?",
+      "options": ["10", "2", "3", "Invalid Number"],
+      "correctAnswer": "2",
+      "difficulty": "hard",
+      "topic": "JavaScript"
+    },
+    {
+        "question": "Which HTML5 element is used to embed video content?",
+        "options": ["<video>", "<media>", "<embed>", "<movie>"],
+        "correctAnswer": "<video>",
+        "difficulty": "easy",
+        "topic": "HTML"
+    },
+    {
+        "question": "Which CSS property is used to make text bold?",
+        "options": ["font-weight", "text-style", "boldness", "font-variant"],
+        "correctAnswer": "font-weight",
+        "difficulty": "easy",
+        "topic": "CSS"
+    },
+    {
+      "question": "What will be the output of `Math.round(4.6)` in JavaScript?",
+      "options": ["4", "5", "4.5", "4.6"],
+      "correctAnswer": "5",
+      "difficulty": "easy",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag defines a section in an HTML document?",
+      "options": ["<div>", "<section>", "<article>", "<p>"],
+      "correctAnswer": "<section>",
+      "difficulty": "medium",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS property is used to change the font family of an element?",
+      "options": ["font-family", "text-font", "font-style", "typeface"],
+      "correctAnswer": "font-family",
+      "difficulty": "easy",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the purpose of the `filter()` method in JavaScript?",
+      "options": ["To modify the elements of an array", "To create a new array with only the elements that pass a test", "To sort the elements of an array", "To find the first element in an array that passes a test"],
+      "correctAnswer": "To create a new array with only the elements that pass a test",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML attribute is used to specify the character encoding for the HTML document?",
+      "options": ["charset", "encoding", "utf-8", "content-type"],
+      "correctAnswer": "charset",
+      "difficulty": "medium",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS property is used to align text horizontally?",
+      "options": ["text-align", "align-text", "horizontal-align", "text-justify"],
+      "correctAnswer": "text-align",
+      "difficulty": "easy",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the purpose of the `reduce()` method in JavaScript?",
+      "options": ["To transform the elements of an array", "To filter the elements of an array", "To combine the elements of an array into a single value", "To iterate over the elements of an array"],
+      "correctAnswer": "To combine the elements of an array into a single value",
+      "difficulty": "hard",
+      "topic": "JavaScript"
+    },
+    {
+      "question": "Which HTML tag is used to define an inline frame?",
+      "options": ["<iframe>", "<frame>", "<inlineframe>", "<embedframe>"],
+      "correctAnswer": "<iframe>",
+      "difficulty": "medium",
+      "topic": "HTML"
+    },
+    {
+      "question": "Which CSS property controls the size of the font?",
+      "options": ["font-size", "text-size", "size", "font"],
+      "correctAnswer": "font-size",
+      "difficulty": "easy",
+      "topic": "CSS"
+    },
+    {
+      "question": "What is the output of `typeof NaN` in JavaScript?",
+      "options": ["number", "NaN", "undefined", "string"],
+      "correctAnswer": "number",
+      "difficulty": "medium",
+      "topic": "JavaScript"
+    }
+  ]
+  
+  

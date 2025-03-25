@@ -1,0 +1,25 @@
+{
+    "question_id": 5,
+    "question_description": "Given a string s, find and return the first non-repeating character. If all characters are repeating, return an empty string.",
+    "input_description": "A string s",
+    "output_description": "First non-repeating character",
+    "constraints": "The string consists of lowercase and uppercase English letters.",
+    "example": {
+        "input": "swiss",
+        "output": "w"
+    },
+    "test_cases": [
+        {
+            "input": "aabbccdee",
+            "output": "d"
+        },
+        {
+            "input": "racecars",
+            "output": "e"
+        },
+        {
+            "input": "aabb",
+            "output": ""
+        }
+    ]
+}

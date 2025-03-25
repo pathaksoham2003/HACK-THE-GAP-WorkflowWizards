@@ -1,0 +1,25 @@
+{
+    "question_id": 7,
+    "question_description": "Given a string s, determine whether it is a palindrome.",
+    "input_description": "A string s",
+    "output_description": "Boolean indicating if it is a palindrome",
+    "constraints": "The string consists of lowercase and uppercase English letters.",
+    "example": {
+        "input": "level",
+        "output": true
+    },
+    "test_cases": [
+        {
+            "input": "madam",
+            "output": true
+        },
+        {
+            "input": "racecar",
+            "output": true
+        },
+        {
+            "input": "hello",
+            "output": false
+        }
+    ]
+}
