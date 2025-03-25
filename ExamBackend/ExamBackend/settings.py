@@ -25,8 +25,9 @@ TEMP_FOLDER = os.path.join(STATIC_URL, 'temp')
 TEST_CASES_DIR = os.path.join(STATIC_URL,'test_case')
 QUIZ_DIR = os.path.join(STATIC_URL,'quizData')
 CODINGQ_DIR = os.path.join(STATIC_URL,'codingQuestions')
+TEMP_QUIZ_DIR = os.path.join(STATIC_URL,'tempQuiz')
 
-for folder in [PROFILE_PIC_FOLDER, ENCODINGS_FOLDER, TEMP_FOLDER, TEST_CASES_DIR,QUIZ_DIR,CODINGQ_DIR]:
+for folder in [PROFILE_PIC_FOLDER, ENCODINGS_FOLDER, TEMP_FOLDER, TEST_CASES_DIR,QUIZ_DIR,CODINGQ_DIR,TEMP_QUIZ_DIR]:
     os.makedirs(folder, exist_ok=True)  # This prevents errors if the folder already exists
     
 # Quick-start development settings - unsuitable for production

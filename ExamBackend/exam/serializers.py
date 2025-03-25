@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from exam.models import Quiz,Result,Teacher,Student
+from exam.models import Quiz,Result,Teacher,Student,BehavioralQuestion
 
 class FaceEncodingSerializer(serializers.Serializer):
     user_id = serializers.CharField(max_length=100)
@@ -24,3 +24,9 @@ class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = '__all__'
+        
+class BehavioralQuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BehavioralQuestion
+        fields = ['id', 'question_text']
+

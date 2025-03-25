@@ -38,6 +38,12 @@ class Quiz(models.Model):
         return self.question
 
 
+class BehavioralQuestion(models.Model):
+    question_text = models.TextField()
+
+    def __str__(self):
+        return self.question_text
+
 class Result(models.Model):
     id = models.AutoField(primary_key=True)
     userId = models.ForeignKey(Student, on_delete=models.CASCADE)

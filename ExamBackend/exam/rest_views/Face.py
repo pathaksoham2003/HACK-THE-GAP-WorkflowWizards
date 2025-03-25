@@ -82,11 +82,12 @@ def save_encodings(user_id,encodings):
 
 @api_view(['POST'])
 def check_face(request):
-    user_id = request.query_params.get('USER_ID')
-    if 'image' not in request.FILES:
-        return Response({"error": "Image is required"}, status=status.HTTP_400_BAD_REQUEST)
+    user_id = request.query_params.get('user_id')
+    image = request.FILES.get('file')
+    
+    if not user_id or not image:
+        return Response({"error": "user_id and image are required"}, status=status.HTTP_400_BAD_REQUEST)
 
-    image = request.FILES['image']
     file_extension = os.path.splitext(image.name)[-1].lower()  # Get original file extension
 
     # Save uploaded image temporarily with the same extension
@@ -102,7 +103,7 @@ def check_face(request):
     # Read the uploaded image
     img = cv2.imread(temp_path)
     if img is None:
-        return Response({"error": "Invalid image"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"error": "Invalid image","matched":False}, status=status.HTTP_400_BAD_REQUEST)
     
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
@@ -112,7 +113,7 @@ def check_face(request):
     encodeCurFrame = face_recognition.face_encodings(imgS, faceCurFrame)
 
     if not encodeCurFrame:
-        return Response({"error": "No face detected"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"error": "No face detected","matched":False}, status=status.HTTP_400_BAD_REQUEST)
 
     for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
         matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
@@ -121,6 +122,6 @@ def check_face(request):
         if len(faceDis) > 0:
             matchIndex = np.argmin(faceDis)
             if matches[matchIndex]:
-                return Response({"message": f"Recognized User ID: {userIds[matchIndex]}"}, status=status.HTTP_200_OK)
+                return Response({"message": f"Recognized User ID: {userIds[matchIndex]}" , "matched":True}, status=status.HTTP_200_OK)
 
-    return Response({"error": "Face not recognized"}, status=status.HTTP_404_NOT_FOUND)
+    return Response({"error": "Face not recognized","matched":False}, status=status.HTTP_404_NOT_FOUND)
