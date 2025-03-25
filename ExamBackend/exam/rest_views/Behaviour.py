@@ -60,8 +60,18 @@ class BehaviourREST(APIView):
             except ValueError:
                 score = 0.0  # Default if parsing fails
             print(score)
-            # ✅ Save the score to `behaviourMarks`
-            Result.objects.filter(id=result_id, userId=user_id).update(behaviourMarks=score)
+            old_result = Result.objects.filter(id=result_id, userId=user_id).first()
+            if not old_result:
+                return Response({"error": "Result not found."}, status=status.HTTP_404_NOT_FOUND)
+
+            # ✅ Calculate Total Marks
+            total = score + float(old_result.quizMarks) + float(old_result.codingMarks)
+
+            # ✅ Update Behaviour Marks and Total Result
+            Result.objects.filter(id=result_id, userId=user_id).update(
+                behaviourMarks=score,
+                result=str(total)  # Convert total to string to match CharField
+            )
 
             return Response({"score": score}, status=status.HTTP_200_OK)
 

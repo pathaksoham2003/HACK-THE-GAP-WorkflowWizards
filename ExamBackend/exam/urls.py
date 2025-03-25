@@ -6,6 +6,8 @@ from exam.rest_views.Exam import ExamRest
 from exam.rest_views.Temp import TempRest
 from exam.rest_views.Auth import RegisterView,LoginView,VerifyView
 from exam.rest_views.Behaviour import BehaviourREST
+from exam.rest_views.Result import ResultGraphView
+
 
 urlpatterns = [
     # Authentication
@@ -30,9 +32,11 @@ urlpatterns = [
     # Behaviour Routes
     path('behaviour/', BehaviourREST.as_view(), name='execute_code'),
     
+    # Result
+    path('result-graph/', ResultGraphView.as_view(), name='result-graph'),
     
     # Temp
-    # path("Temp/",TempRest.as_view()),
+    path("Temp/",TempRest.as_view()),
     
     
 ]

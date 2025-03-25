@@ -58,3 +58,18 @@ class Result(models.Model):
 
     def __str__(self):
         return f"{self.userId.name} - Result"
+    
+class ResultGraph(models.Model):
+    id = models.AutoField(primary_key=True)
+    userId = models.ForeignKey(Student, on_delete=models.CASCADE)
+    quizQuestions = models.CharField(max_length=255, default="", null=True, blank=True)
+    quizMarks = models.DecimalField(max_digits=5, decimal_places=2, default=0.0, null=True, blank=True)
+    codingQuestion = models.TextField(default="", null=True, blank=True)
+    codingMarks = models.DecimalField(max_digits=5, decimal_places=2, default=0.0, null=True, blank=True)
+    behaviourQuestion = models.TextField(default="", null=True, blank=True)
+    behaviourMarks = models.DecimalField(max_digits=5, decimal_places=2, default=0.0, null=True, blank=True)
+    isCaught = models.BooleanField(default=False)
+    result = models.CharField(max_length=255, default="", null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.userId.name} - Result"
