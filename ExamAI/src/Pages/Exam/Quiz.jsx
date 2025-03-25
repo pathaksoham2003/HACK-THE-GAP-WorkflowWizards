@@ -12,6 +12,9 @@ const Quiz = () => {
   const questionsPerPage = 5;
   const topics = ["html", "css", "javascript", "java", "django"];
 
+  const userId = localStorage.getItem("userId");
+  const resultId = localStorage.getItem("resultId");
+
   useEffect(() => {
     if (!topic) return;
     setLoading(true);
@@ -19,7 +22,7 @@ const Quiz = () => {
     
     const fetchQuestions = async () => {
       try {
-        const response = await fetch(API_ENDPOINTS.GET_RANDOM_QUESTIONS(topic));
+        const response = await fetch(API_ENDPOINTS.GET_RANDOM_QUESTIONS(topic, resultId , userId));
         if (!response.ok) throw new Error("Failed to fetch questions");
         const data = await response.json();
         setQuestions(data);
@@ -49,12 +52,39 @@ const Quiz = () => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const score = questions.filter(
       (q) => selectedAnswers[q.id] === q.correctAnswer
     ).length;
-    alert(`Your score: ${score}/${questions.length}`);
+  
+    const user_id = localStorage.getItem("userId");
+    const result_id = localStorage.getItem("resultId");
+  
+    if (!user_id || !result_id) {
+      alert("User ID or Result ID missing. Please restart the exam.");
+      return;
+    }
+  
+    try {
+      const response = await fetch(API_ENDPOINTS.SUBMIT_QUIZ, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user_id, result_id, marks: score }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert(`Your score: ${score}/${questions.length}`);
+        navigate("/code"); // Proceed to the coding section
+      } else {
+        alert(data.error || "Failed to submit score.");
+      }
+    } catch (error) {
+      alert("Error: Unable to submit score. Please try again.");
+    }
   };
+  
 
   if (!topic) {
     return (
@@ -79,7 +109,7 @@ const Quiz = () => {
 
   return (
     <div className="flex h-screen bg-cover bg-center" style={{ backgroundImage: `url(${examAIImage})` }}>
-      <div className="w-1/4 bg-blue-600 text-white p-6">
+      <div className="w-1/4 bg-blue-600 text-black p-6">
         <h3 className="text-lg font-semibold mb-4">Quiz Summary</h3>
         <p>Total Questions: {questions.length}</p>
         <p>Attempted: {attemptedCount}</p>

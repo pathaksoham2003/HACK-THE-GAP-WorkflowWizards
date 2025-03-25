@@ -13,6 +13,7 @@ import Register from "./Pages/Login/Register";
 import StartExam from "./Pages/Exam/StartExam";
 import UploadFace from "./Pages/Face/UploadFace";
 import CheckFace from "./Pages/Face/CheckFace";
+import ResultsPage from "./Pages/Results/ResultsPage";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           
           <Route path="/start-exam" element={<StartExam/>} />
           <Route path="/check-face" element={<CheckFace/>} />
+          <Route path="/result" element={<ResultsPage/>} />
 
 
         {/* </Route> */}

@@ -22,6 +22,8 @@ const Dashboard = () => {
             <button className="hover:underline">Result</button>
             <button onClick={() => navigate("/upload-face")} className="hover:underline">Upload Face</button>
             <button onClick={() => navigate("/check-face")} className="hover:underline">check Face</button>
+            <button onClick={() => navigate("/result")} className="hover:underline">Result</button>
+
           </nav>
         </div>
         
