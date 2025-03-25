@@ -1,11 +1,13 @@
 import { useState, useRef } from "react";
 import API_ENDPOINTS from "../../api/endpoint";
+import { useNavigate } from "react-router-dom";
 
 const CheckFace = () => {
   const [cameraActive, setCameraActive] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
 
   // Start Camera
   const startCamera = async () => {
@@ -50,6 +52,7 @@ const CheckFace = () => {
           if (response.ok && data.matched) {
             alert("Candidate matched successfully!");
             console.log("Match Response:", data);
+            navigate("/start-exam")
           } else {
             alert("Face match failed: " + data.error);
           }

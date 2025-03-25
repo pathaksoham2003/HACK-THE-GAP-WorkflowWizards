@@ -11,7 +11,7 @@ const ExamPage = () => {
           Submit Exam
         </button>
         {/* Toastify Container for Notifications */}
-        <ToastContainer position="top-right" autoClose={3000} />
+        {/* <ToastContainer position="top-right" autoClose={3000} /> */}
       </div>
     </ScreenExitLayout>
   );
