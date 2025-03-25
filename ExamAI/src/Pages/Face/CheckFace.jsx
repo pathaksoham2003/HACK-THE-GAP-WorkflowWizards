@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
 import API_ENDPOINTS from "../../api/endpoint";
 
-const CheckFace = () => {
+const UploadFace = () => {
   const [cameraActive, setCameraActive] = useState(false);
-  const [isUploading, setIsUploading] = useState(false);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -34,33 +33,29 @@ const CheckFace = () => {
           return;
         }
 
-        setIsUploading(true);
-
         const formData = new FormData();
         formData.append("file", blob, "captured-image.png");
 
         try {
-          // Upload the image for face check
-          const response = await fetch(API_ENDPOINTS.CHECK_FACE(userId), {
+          const response = await fetch(`${API_ENDPOINTS.CHECK_FACE}?user_id=${userId}`, {
             method: "POST",
             body: formData,
           });
 
           const data = await response.json();
           if (response.ok) {
-            alert("Face matched successfully!");
-            console.log("Match Response:", data);
+            alert("Image uploaded successfully!");
+            console.log("Response:", data);
           } else {
-            alert("Face match failed: " + data.error);
+            alert("Error: " + data.error);
           }
         } catch (error) {
-          console.error("Error:", error);
-          alert("Failed to process image.");
-        } finally {
-          setIsUploading(false);
-          stopCamera();
+          console.error("Upload error:", error);
+          alert("Failed to upload image.");
         }
       }, "image/png");
+
+      stopCamera();
     }
   };
 
@@ -76,7 +71,7 @@ const CheckFace = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-5">
-      <h2 className="text-xl font-semibold mb-4">Capture and Check Face</h2>
+      <h2 className="text-xl font-semibold mb-4">Capture and Upload Image</h2>
 
       {/* Camera Capture Section */}
       {cameraActive ? (
@@ -85,9 +80,8 @@ const CheckFace = () => {
           <button
             onClick={captureAndUploadImage}
             className="mt-2 px-6 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700"
-            disabled={isUploading}
           >
-            {isUploading ? "Processing..." : "Capture & Check Face"}
+            Capture & Upload
           </button>
         </div>
       ) : (
@@ -104,4 +98,4 @@ const CheckFace = () => {
   );
 };
 
-export default CheckFace;
+export default UploadFace;

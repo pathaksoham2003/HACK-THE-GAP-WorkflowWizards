@@ -8,7 +8,7 @@ const API_ENDPOINTS = {
   GET_LATEST_CODING_QUESTION: `${BASE_URL}/coding/random/`, // New API to fetch the latest coding question
   EXECUTE_TEST_CASES: `${BASE_URL}/execute_test_cases/`,
   FACE_UPLOAD: `${BASE_URL}/generate-face-encoding/`,
- CHECK_FACE: (userId) => `${BASE_URL}/check-face/${userId}`
+ CHECK_FACE: `${BASE_URL}/check-face/`,
 };
 
 export default API_ENDPOINTS;
