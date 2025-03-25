@@ -1,25 +1,25 @@
 {
     "question_id": 8,
-    "question_description": "Given an integer n, find and return its factorial.",
-    "input_description": "An integer n",
-    "output_description": "Factorial of n",
-    "constraints": "0 \u2264 n \u2264 12 (to prevent integer overflow).",
+    "question_description": "Given a string s, count the occurrences of each character and return the result as a string.",
+    "input_description": "A string s",
+    "output_description": "String with character counts",
+    "constraints": "The input string consists of printable ASCII characters and has a length between 1 and 100,000.",
     "example": {
-        "input": 4,
-        "output": 24
+        "input": "aabbc",
+        "output": "a2b2c1"
     },
     "test_cases": [
         {
-            "input": 5,
-            "output": 120
+            "input": "hello",
+            "output": "h1e1l2o1"
         },
         {
-            "input": 0,
-            "output": 1
+            "input": "mississippi",
+            "output": "m1i4s4p2"
         },
         {
-            "input": 3,
-            "output": 6
+            "input": "banana",
+            "output": "b1a3n2"
         }
     ]
 }

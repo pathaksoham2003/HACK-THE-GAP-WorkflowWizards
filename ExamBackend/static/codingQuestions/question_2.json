@@ -1,48 +1,25 @@
 {
     "question_id": 2,
-    "question_description": "Given an array of integers, find and return the maximum integer in the array.",
-    "input_description": "An array of integers",
-    "output_description": "Maximum integer in the array",
-    "constraints": "The array contains at least one integer and at most 100,000 integers.",
+    "question_description": "Given a string s, remove all vowels (a, e, i, o, u) from the string and return the result.",
+    "input_description": "A string s",
+    "output_description": "String with vowels removed",
+    "constraints": "The input string consists of lowercase English letters and has a length between 1 and 100,000.",
     "example": {
-        "input": [
-            3,
-            7,
-            2,
-            9,
-            5
-        ],
-        "output": 9
+        "input": "example",
+        "output": "xmpl"
     },
     "test_cases": [
         {
-            "input": [
-                1,
-                2,
-                3,
-                4,
-                5
-            ],
-            "output": 5
+            "input": "hello",
+            "output": "hll"
         },
         {
-            "input": [
-                -10,
-                -5,
-                0,
-                5,
-                10
-            ],
-            "output": 10
+            "input": "world",
+            "output": "wrld"
         },
         {
-            "input": [
-                100,
-                200,
-                50,
-                300
-            ],
-            "output": 300
+            "input": "beautiful",
+            "output": "btfl"
         }
     ]
 }

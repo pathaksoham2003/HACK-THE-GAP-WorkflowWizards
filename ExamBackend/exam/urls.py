@@ -1,6 +1,6 @@
 from django.urls import path
 from exam.rest_views.Face import generate_face_encoding, check_face
-from exam.rest_views.Coding import execute_code,question_get
+from exam.rest_views.Coding import execute_code,question_get,execute_test_cases
 from exam.rest_views.Quiz import QuizRest
 from exam.rest_views.Exam import ExamRest
 from exam.rest_views.Temp import TempRest
@@ -13,7 +13,7 @@ urlpatterns = [
     path('verify/<str:user_type>/<int:user_id>/', VerifyView.as_view(), name='verify'),
     path('login/', LoginView.as_view(), name='login'),
     
-    
+    # Face 
     path('generate-face-encoding/', generate_face_encoding, name='generate_face_encoding'),
     path('check-face/', check_face, name='check_face'),
     
@@ -25,6 +25,7 @@ urlpatterns = [
     # Coding Routes
     path("coding/random/", question_get, name="random_coding_question"),
     path('execute_code/', execute_code, name='execute_code'),
+    path('execute_test_cases/', execute_test_cases, name='execute_test_cases'),
     
     # Behaviour Routes
     

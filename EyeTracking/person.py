@@ -2,7 +2,7 @@ import cv2
 from ultralytics import YOLO
 
 # Load YOLO model
-model = YOLO("yolov8s.pt")  # Pretrained YOLO model
+model = YOLO("./models/yolov8m.pt")  # Pretrained YOLO model
 
 # Define allowed class IDs and confidence thresholds
 CLASS_THRESHOLDS = {

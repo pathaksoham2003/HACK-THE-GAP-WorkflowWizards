@@ -1,25 +1,25 @@
 {
     "question_id": 6,
-    "question_description": "Given a string s, count and return the number of vowels in the string.",
+    "question_description": "Given a string s, check if it is a palindrome. Return 'YES' if it is, otherwise return 'NO'.",
     "input_description": "A string s",
-    "output_description": "Count of vowels",
-    "constraints": "The string consists of lowercase and uppercase English letters.",
+    "output_description": "'YES' if the string is a palindrome, otherwise 'NO'",
+    "constraints": "The input string consists of lowercase English letters and has a length between 1 and 100,000.",
     "example": {
-        "input": "programming",
-        "output": 3
+        "input": "racecar",
+        "output": "YES"
     },
     "test_cases": [
         {
+            "input": "madam",
+            "output": "YES"
+        },
+        {
             "input": "hello",
-            "output": 2
+            "output": "NO"
         },
         {
-            "input": "world",
-            "output": 1
-        },
-        {
-            "input": "AEIOU",
-            "output": 5
+            "input": "level",
+            "output": "YES"
         }
     ]
 }

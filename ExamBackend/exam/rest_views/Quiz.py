@@ -32,6 +32,8 @@ class QuizRest(APIView):
     )
     def get(self, request):
         topic = request.GET.get("topic")  # Get topic from query parameter
+        result_id = request.query_params.get('result_id')
+        user_id = request.query_params.get('user_id')
 
         if not topic:
             return Response({"error": "Topic parameter is required"}, status=status.HTTP_400_BAD_REQUEST)

@@ -1,25 +1,25 @@
 {
     "question_id": 3,
-    "question_description": "Given an integer n, determine whether it is a prime number.",
-    "input_description": "An integer n",
-    "output_description": "Boolean indicating if the number is prime",
-    "constraints": "1 \u2264 n \u2264 10^6.",
+    "question_description": "Given a string s, capitalize the first letter of every word and return the result.",
+    "input_description": "A string s",
+    "output_description": "String with capitalized words",
+    "constraints": "The input string consists of lowercase and uppercase English letters and spaces. Length is between 1 and 100,000.",
     "example": {
-        "input": 13,
-        "output": true
+        "input": "hello world",
+        "output": "Hello World"
     },
     "test_cases": [
         {
-            "input": 7,
-            "output": true
+            "input": "python programming",
+            "output": "Python Programming"
         },
         {
-            "input": 10,
-            "output": false
+            "input": "openai chatgpt",
+            "output": "Openai Chatgpt"
         },
         {
-            "input": 2,
-            "output": true
+            "input": "good morning",
+            "output": "Good Morning"
         }
     ]
 }

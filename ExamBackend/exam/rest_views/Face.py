@@ -13,32 +13,14 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from exam.form import UploadFileForm
 
-# Function to load existing encodings
-def load_existing_encodings(user_id):
-    file_path = os.path.join(settings.ENCODINGS_FOLDER,f"{user_id}.p")
-    if os.path.exists(file_path):
-        with open(file_path, 'rb') as file:
-            return pickle.load(file)
-    return [[], []]  # Empty lists for encodings and user IDs
-
-# Function to save encodings
-def save_encodings(user_id,encodings):
-    file_path = os.path.join(settings.ENCODINGS_FOLDER,f"{user_id}.p")
-    with open(file_path, 'wb') as file:
-        pickle.dump(encodings, file)
-# ✅ Route to check face recognition
-
 @api_view(['POST'])
 def generate_face_encoding(request):
-    user_id = request.headers.get('USER_ID')
-    form = UploadFileForm(request.POST, request.FILES)
-    image = None
-    if form.is_valid():
-        image = request.FILES['image']
+    user_id = request.query_params.get('user_id')
+    image = request.FILES.get('file')
             
     print("Headers:", request.headers)
     print("User ID:", user_id)
-    print("Image:", image)
+    print("Image:", request.FILES)
 
     if not user_id or not image:
         return Response({"error": "user_id and image are required"}, status=status.HTTP_400_BAD_REQUEST)
@@ -82,24 +64,25 @@ def generate_face_encoding(request):
     else:
         return Response({"message": f"User ID {user_id} already exists."}, status=status.HTTP_409_CONFLICT)
 
-@swagger_auto_schema(
-    method='post',
-    manual_parameters=[
-        openapi.Parameter('USER_ID', openapi.IN_HEADER, description="User ID", type=openapi.TYPE_INTEGER),
-    ],
-    request_body=openapi.Schema(
-        type=openapi.TYPE_OBJECT,
-        properties={
-            'image': openapi.Schema(type=openapi.TYPE_FILE, description="Image file"),
-        },
-        required=['image']
-    ),
-    responses={200: "Face recognized", 400: "Invalid input", 404: "Face not recognized"}
-)
+
+# Function to load existing encodings
+def load_existing_encodings(user_id):
+    file_path = os.path.join(settings.ENCODINGS_FOLDER,f"{user_id}.p")
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as file:
+            return pickle.load(file)
+    return [[], []]  # Empty lists for encodings and user IDs
+
+# Function to save encodings
+def save_encodings(user_id,encodings):
+    file_path = os.path.join(settings.ENCODINGS_FOLDER,f"{user_id}.p")
+    with open(file_path, 'wb') as file:
+        pickle.dump(encodings, file)
 # ✅ Route to check face recognition
+
 @api_view(['POST'])
 def check_face(request):
-    user_id = request.headers.get('USER_ID')
+    user_id = request.query_params.get('USER_ID')
     if 'image' not in request.FILES:
         return Response({"error": "Image is required"}, status=status.HTTP_400_BAD_REQUEST)
 

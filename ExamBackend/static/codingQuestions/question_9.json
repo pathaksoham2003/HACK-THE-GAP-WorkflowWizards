@@ -1,46 +1,25 @@
 {
     "question_id": 9,
-    "question_description": "Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the missing number.",
-    "input_description": "An array containing n distinct numbers taken from 0, 1, 2, ..., n",
-    "output_description": "The missing number",
-    "constraints": "The array has a length of n and contains numbers from 0 to n with exactly one missing.",
+    "question_description": "Given a string s, find and return the most frequent character.",
+    "input_description": "A string s",
+    "output_description": "Most frequent character",
+    "constraints": "The input string consists of lowercase English letters and has a length between 1 and 100,000.",
     "example": {
-        "input": [
-            0,
-            1,
-            3
-        ],
-        "output": 2
+        "input": "aabbccddeeffgg",
+        "output": "a"
     },
     "test_cases": [
         {
-            "input": [
-                3,
-                0,
-                1
-            ],
-            "output": 2
+            "input": "hello",
+            "output": "l"
         },
         {
-            "input": [
-                0,
-                1
-            ],
-            "output": 2
+            "input": "mississippi",
+            "output": "i"
         },
         {
-            "input": [
-                9,
-                6,
-                4,
-                2,
-                3,
-                5,
-                7,
-                0,
-                1
-            ],
-            "output": 8
+            "input": "banana",
+            "output": "a"
         }
     ]
 }

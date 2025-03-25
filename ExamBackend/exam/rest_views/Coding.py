@@ -206,80 +206,73 @@ def question_verify(request):
             return Response({"error": e.stderr.strip()}, status=status.HTTP_400_BAD_REQUEST)
 
 
-#  Test route
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+import os
+import json
+import tempfile
+import subprocess
+from django.conf import settings
+
 @api_view(['POST'])
 def execute_test_cases(request):
     """
-    Executes the submitted code against test cases defined in the question JSON file.
+    Executes the uploaded Java file against test cases defined in the question JSON file.
     """
-    code = request.data.get("code")
-    language = request.data.get("language")
-    question_id = request.data.get("question_id")
+    uploaded_file = request.FILES.get("file")
+    question_id = request.query_params.get("question_id")
 
-    if not code or not language or not question_id:
-        return Response({"error": "Missing 'code', 'language', or 'question_id' field"}, status=status.HTTP_400_BAD_REQUEST)
+    if not uploaded_file or not question_id:
+        return Response({"error": "Missing 'file' or 'question_id' field"}, status=status.HTTP_400_BAD_REQUEST)
 
-    docker_images = {
-        "python": "python:3.9",
-        "java": "openjdk:17",
-        "c": "gcc:latest",
-        "cpp": "gcc:latest",
-        "javascript": "node:latest"
-    }
-
-    if language not in docker_images:
-        return Response({"error": "Unsupported language"}, status=status.HTTP_400_BAD_REQUEST)
-
-    # Load test cases from the JSON file
     question_file_path = os.path.join(settings.CODINGQ_DIR, f"question_{question_id}.json")
     if not os.path.exists(question_file_path):
         return Response({"error": "Test case file not found"}, status=status.HTTP_404_NOT_FOUND)
 
     with open(question_file_path, "r", encoding="utf-8") as f:
         question_data = json.load(f)
-    
+
     test_cases = question_data.get("test_cases", [])
 
     with tempfile.TemporaryDirectory() as temp_dir:
-        file_extension = {"python": "py", "java": "java", "c": "c", "cpp": "cpp", "javascript": "js"}[language]
-        file_name = "Main." + file_extension if language == "java" else "script." + file_extension
+        file_name = "Main.java"
         file_path = os.path.join(temp_dir, file_name)
 
-        with open(file_path, "w") as code_file:
-            code_file.write(code)
-
-        container_name = f"code-exec-{uuid.uuid4()}"
-        docker_run_command = [
-            "docker", "run", "--rm", "-v", f"{temp_dir}:/app", "-w", "/app", docker_images[language]
-        ]
-
-        execute_command = {
-            "python": ["python", file_name],
-            "java": ["sh", "-c", f"javac {file_name} && java Main"],
-            "c": ["sh", "-c", f"gcc {file_name} -o program && ./program"],
-            "cpp": ["sh", "-c", f"g++ {file_name} -o program && ./program"],
-            "javascript": ["node", file_name]
-        }
+        with open(file_path, "wb") as dest_file:
+            for chunk in uploaded_file.chunks():
+                dest_file.write(chunk)
 
         try:
+            compile_result = subprocess.run(
+                ["javac", file_path], capture_output=True, text=True
+            )
+            if compile_result.returncode != 0:
+                return Response({"error": "Compilation failed", "details": compile_result.stderr}, status=status.HTTP_400_BAD_REQUEST)
+
             all_passed = True
             failed_cases = []
-            
+
             for test in test_cases:
                 input_data = test["input"]
-                expected_output = test["output"]
-                
-                result = subprocess.run(
-                    docker_run_command + execute_command[language],
-                    input=input_data,  # Pass input data to the program
-                    capture_output=True,
-                    text=True,
-                    timeout=5
-                )
-                
-                output = result.stdout.strip()
+                expected_output = str(test["output"]).strip()
+                execute_command = ["java", "-cp", temp_dir, "Main"]
 
-                if output != str(expected_output):
+                try:
+                    result = subprocess.run(
+                        execute_command,
+                        input=input_data + "\n",
+                        capture_output=True,
+                        text=True,
+                        timeout=5
+                    )
+                    output = result.stdout.strip()
+                except subprocess.TimeoutExpired:
+                    return Response({"error": "Execution timed out"}, status=status.HTTP_408_REQUEST_TIMEOUT)
+
+                if output != expected_output:
                     all_passed = False
                     failed_cases.append({"input": input_data, "expected": expected_output, "got": output})
 
@@ -287,8 +280,6 @@ def execute_test_cases(request):
                 return Response({"message": "All test cases passed!"}, status=status.HTTP_200_OK)
             else:
                 return Response({"error": "Some test cases failed", "details": failed_cases}, status=status.HTTP_400_BAD_REQUEST)
-        
-        except subprocess.TimeoutExpired:
-            return Response({"error": "Execution timed out"}, status=status.HTTP_408_REQUEST_TIMEOUT)
+
         except subprocess.CalledProcessError as e:
             return Response({"error": e.stderr.strip()}, status=status.HTTP_400_BAD_REQUEST)
